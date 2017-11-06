@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1E7E70DB4237451BBF971C /* Pods_DirectPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40C7DA44101389519E951BB /* Pods_DirectPhotos.framework */; };
 		BEFBE1CA1FB109BE0065DE33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBE1C91FB109BE0065DE33 /* AppDelegate.swift */; };
 		BEFBE1CC1FB109BE0065DE33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBE1CB1FB109BE0065DE33 /* ViewController.swift */; };
 		BEFBE1CF1FB109BE0065DE33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFBE1CD1FB109BE0065DE33 /* Main.storyboard */; };
 		BEFBE1D11FB109BE0065DE33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEFBE1D01FB109BE0065DE33 /* Assets.xcassets */; };
 		BEFBE1D41FB109BE0065DE33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFBE1D21FB109BE0065DE33 /* LaunchScreen.storyboard */; };
+		BEFBE1DC1FB10CB10065DE33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEFBE1DB1FB10CB10065DE33 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2B1C54485C8984857329839 /* Pods-DirectPhotos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectPhotos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DirectPhotos/Pods-DirectPhotos.debug.xcconfig"; sourceTree = "<group>"; };
 		BEFBE1C61FB109BD0065DE33 /* DirectPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DirectPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFBE1C91FB109BE0065DE33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFBE1CB1FB109BE0065DE33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		BEFBE1D01FB109BE0065DE33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEFBE1D31FB109BE0065DE33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEFBE1D51FB109BE0065DE33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEFBE1DB1FB10CB10065DE33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C40C7DA44101389519E951BB /* Pods_DirectPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DirectPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C61EE7264A51344BD53D11A6 /* Pods-DirectPhotos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectPhotos.release.xcconfig"; path = "Pods/Target Support Files/Pods-DirectPhotos/Pods-DirectPhotos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1E7E70DB4237451BBF971C /* Pods_DirectPhotos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191BFEE576F31CFD68E166FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2B1C54485C8984857329839 /* Pods-DirectPhotos.debug.xcconfig */,
+				C61EE7264A51344BD53D11A6 /* Pods-DirectPhotos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BEFBE1BD1FB109BD0065DE33 = {
 			isa = PBXGroup;
 			children = (
 				BEFBE1C81FB109BE0065DE33 /* DirectPhotos */,
 				BEFBE1C71FB109BD0065DE33 /* Products */,
+				191BFEE576F31CFD68E166FE /* Pods */,
+				CEA3C17680F1671E7856B404 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +78,17 @@
 				BEFBE1D01FB109BE0065DE33 /* Assets.xcassets */,
 				BEFBE1D21FB109BE0065DE33 /* LaunchScreen.storyboard */,
 				BEFBE1D51FB109BE0065DE33 /* Info.plist */,
+				BEFBE1DB1FB10CB10065DE33 /* GoogleService-Info.plist */,
 			);
 			path = DirectPhotos;
+			sourceTree = "<group>";
+		};
+		CEA3C17680F1671E7856B404 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C40C7DA44101389519E951BB /* Pods_DirectPhotos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEFBE1D81FB109BE0065DE33 /* Build configuration list for PBXNativeTarget "DirectPhotos" */;
 			buildPhases = (
+				B05DB4E83FA8CE8BD063F3FF /* [CP] Check Pods Manifest.lock */,
 				BEFBE1C21FB109BD0065DE33 /* Sources */,
 				BEFBE1C31FB109BD0065DE33 /* Frameworks */,
 				BEFBE1C41FB109BD0065DE33 /* Resources */,
+				2B0B454B0DDBAF976742BDC7 /* [CP] Embed Pods Frameworks */,
+				551D0E0133972470140C647A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,12 +154,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEFBE1D41FB109BE0065DE33 /* LaunchScreen.storyboard in Resources */,
+				BEFBE1DC1FB10CB10065DE33 /* GoogleService-Info.plist in Resources */,
 				BEFBE1D11FB109BE0065DE33 /* Assets.xcassets in Resources */,
 				BEFBE1CF1FB109BE0065DE33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B0B454B0DDBAF976742BDC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DirectPhotos/Pods-DirectPhotos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		551D0E0133972470140C647A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DirectPhotos/Pods-DirectPhotos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B05DB4E83FA8CE8BD063F3FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BEFBE1C21FB109BD0065DE33 /* Sources */ = {
@@ -272,6 +351,7 @@
 		};
 		BEFBE1D91FB109BE0065DE33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2B1C54485C8984857329839 /* Pods-DirectPhotos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +367,7 @@
 		};
 		BEFBE1DA1FB109BE0065DE33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C61EE7264A51344BD53D11A6 /* Pods-DirectPhotos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
