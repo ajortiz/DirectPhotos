@@ -1,0 +1,6 @@
+DirectPhotos Progress Log
+
+============
+8 Nov. 2017
+- Created Repo on Github for files
+- Working on uploading photos to firebase storage
