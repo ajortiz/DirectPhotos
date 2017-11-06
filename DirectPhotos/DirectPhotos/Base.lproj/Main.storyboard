@@ -440,7 +440,8 @@
         <image name="logoIco" width="375" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="j3o-JP-JYP"/>
         <segue reference="rqw-3P-c1M"/>
-        <segue reference="37h-pb-ERc"/>
+        <segue reference="d0c-Th-ZTW"/>
     </inferredMetricsTieBreakers>
 </document>

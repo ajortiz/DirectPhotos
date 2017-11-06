@@ -16,7 +16,7 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        print("Album name \(albumName)")
+       // print("Album name \(albumName)")
         // Do any additional setup after loading the view.
     }
  
