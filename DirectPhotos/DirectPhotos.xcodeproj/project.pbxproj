@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4D1E7E70DB4237451BBF971C /* Pods_DirectPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40C7DA44101389519E951BB /* Pods_DirectPhotos.framework */; };
+		BE645D8A1FB1100700F3E904 /* AlbumRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645D891FB10FF700F3E904 /* AlbumRollViewController.swift */; };
+		BE645D8C1FB1104100F3E904 /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE645D8B1FB1102E00F3E904 /* UploadImageViewController.swift */; };
 		BEFBE1CA1FB109BE0065DE33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBE1C91FB109BE0065DE33 /* AppDelegate.swift */; };
 		BEFBE1CC1FB109BE0065DE33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFBE1CB1FB109BE0065DE33 /* ViewController.swift */; };
 		BEFBE1CF1FB109BE0065DE33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFBE1CD1FB109BE0065DE33 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		A2B1C54485C8984857329839 /* Pods-DirectPhotos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DirectPhotos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DirectPhotos/Pods-DirectPhotos.debug.xcconfig"; sourceTree = "<group>"; };
+		BE645D891FB10FF700F3E904 /* AlbumRollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumRollViewController.swift; sourceTree = "<group>"; };
+		BE645D8B1FB1102E00F3E904 /* UploadImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageViewController.swift; sourceTree = "<group>"; };
 		BEFBE1C61FB109BD0065DE33 /* DirectPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DirectPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFBE1C91FB109BE0065DE33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFBE1CB1FB109BE0065DE33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 				BEFBE1CD1FB109BE0065DE33 /* Main.storyboard */,
 				BEFBE1D01FB109BE0065DE33 /* Assets.xcassets */,
 				BEFBE1D21FB109BE0065DE33 /* LaunchScreen.storyboard */,
+				BE645D8B1FB1102E00F3E904 /* UploadImageViewController.swift */,
+				BE645D891FB10FF700F3E904 /* AlbumRollViewController.swift */,
 				BEFBE1D51FB109BE0065DE33 /* Info.plist */,
 				BEFBE1DB1FB10CB10065DE33 /* GoogleService-Info.plist */,
 			);
@@ -216,6 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEFBE1CC1FB109BE0065DE33 /* ViewController.swift in Sources */,
+				BE645D8C1FB1104100F3E904 /* UploadImageViewController.swift in Sources */,
+				BE645D8A1FB1100700F3E904 /* AlbumRollViewController.swift in Sources */,
 				BEFBE1CA1FB109BE0065DE33 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
