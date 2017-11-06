@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 class UploadImageViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     @IBOutlet weak var albumNameLbl: UILabel!
@@ -16,7 +16,7 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         
         super.viewDidLoad()
-       // print("Album name \(albumName)")
+        print("Album name \(albumName)")
         // Do any additional setup after loading the view.
     }
  
@@ -87,6 +87,32 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
     
     func imageUploadRequest()
     {
+        // Get a reference to the storage service using the default Firebase App
+        //let storage = FIRStorage.storage()
+        // Create a storage reference from storage service
+        
+        let imageName = NSUUID().uuidString
+        let storageRef =  FIRStorage.storage().reference().child("album_images").child("\(imageName).png")
+        
+        if let uploadData = UIImagePNGRepresentation(self.imagePreview.image!) {
+            
+            storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                
+                if let error = error {
+                    print(error)
+                    return
+                }
+                
+                if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
+                    
+                    let values = ["albumName": albumName]
+                    
+                    //self.registerUserIntoDatabaseWithUID(uid, values: values as [String : AnyObject])
+                }
+            })
+        }
+        
+        
         
         let myUrl = NSURL(string: "http://www.aortiz6.create.stedwards.edu/directPhotosTEST/uploadImage.php?");
         let request = NSMutableURLRequest(url:myUrl! as URL);
