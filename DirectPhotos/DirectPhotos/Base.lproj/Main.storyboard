@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uys-9Q-4pB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -93,7 +93,7 @@
         <!--View Controller-->
         <scene sceneID="13j-Fi-y9i">
             <objects>
-                <viewController id="Uys-9Q-4pB" customClass="ViewController" customModule="phpMySQLTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Uys-9Q-4pB" customClass="ViewController" customModule="DirectPhotos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gYJ-6x-yq0"/>
                         <viewControllerLayoutGuide type="bottom" id="c2B-aW-VcR"/>
@@ -225,7 +225,7 @@
         <!--Upload Image View Controller-->
         <scene sceneID="ff5-zn-PnJ">
             <objects>
-                <viewController storyboardIdentifier="uploadImageVC" id="dUu-eu-LvU" customClass="UploadImageViewController" customModule="phpMySQLTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="uploadImageVC" id="dUu-eu-LvU" customClass="UploadImageViewController" customModule="DirectPhotos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="57z-kE-I6L"/>
                         <viewControllerLayoutGuide type="bottom" id="1N7-Ol-135"/>
@@ -323,7 +323,7 @@
         <!--Album Roll View Controller-->
         <scene sceneID="Wgp-We-oOz">
             <objects>
-                <viewController storyboardIdentifier="albumRollVC" id="zhg-N8-YVy" customClass="AlbumRollViewController" customModule="phpMySQLTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="albumRollVC" id="zhg-N8-YVy" customClass="AlbumRollViewController" customModule="DirectPhotos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rdg-GF-wHb"/>
                         <viewControllerLayoutGuide type="bottom" id="aUx-c7-mSw"/>
@@ -339,7 +339,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pt-7Z-nVt">
-                                <rect key="frame" x="95" y="59" width="69" height="15"/>
+                                <rect key="frame" x="95" y="57" width="69" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="kAy-vL-Lbk"/>
                                     <constraint firstAttribute="height" constant="17" id="kL0-HC-WZB"/>
@@ -359,7 +359,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhotoCell" rowHeight="479" id="iG9-IB-sfF" customClass="PhotoCell" customModule="phpMySQLTest" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PhotoCell" rowHeight="479" id="iG9-IB-sfF" customClass="PhotoCell" customModule="DirectPhotos" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="479"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iG9-IB-sfF" id="HQC-kZ-cl3">
