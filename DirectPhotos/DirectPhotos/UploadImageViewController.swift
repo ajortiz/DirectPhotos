@@ -89,7 +89,7 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             picker.dismiss(animated: true, completion: nil)
             
-            imageUploadManager = imageUploadManager()
+            let imageUploadManager = imageUploadManager()
             imageUploadManager?.uploadImage(image, progressBlock: { (percentage) in
                 print(percentage)
             }, completionBlock: { [weak self] (fileURL, errorMessage) in

@@ -10,7 +10,7 @@ import UIKit
 import FirebaseStorage
 import Firebase
 
-class imageUploadManager: NSObject {
+class ImageUploadManager: NSObject {
     func uploadImage(_ image: UIImage, progressBlock: @escaping (_ percentage: Double) -> Void, completionBlock: @escaping (_ url: URL?, _ errorMessage: String?) -> Void) {
         let storage = FIRStorage.storage()
         let storageReference = storage.reference()
