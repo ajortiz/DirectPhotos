@@ -84,116 +84,98 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
         
     }
  
-  
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            picker.dismiss(animated: true, completion: nil)
-            
-            let imageUploadManager = imageUploadManager()
-            imageUploadManager?.uploadImage(image, progressBlock: { (percentage) in
-                print(percentage)
-            }, completionBlock: { [weak self] (fileURL, errorMessage) in
-                guard let strongSelf = self else {
+  //func imageUploadRequest()
+  //{
+   
+   // }
+    func imageUploadRequest()
+    {
+        // Get a reference to the storage service using the default Firebase App
+        //let storage = FIRStorage.storage()
+        // Create a storage reference from storage service
+
+        let imageName = NSUUID().uuidString
+        let storageRef =  FIRStorage.storage().reference().child("album_images").child("\(imageName).png")
+
+        if let uploadData = UIImagePNGRepresentation(self.imagePreview.image!) {
+
+            storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+
+                if let error = error {
+                    print(error)
                     return
                 }
-                
-                print(fileURL)
-                print(errorMessage)
-                
-                let carObj = Car(objectID: "ndbflk", name: "Alfa Romeo", price: 300000, salePrice: nil, carDescription: nil, image: nil)
-                carObj.imageURL = fileURL
-                strongSelf.performSegue(withIdentifier: "selectCar", sender: carObj)
+
+                if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
+
+                    let values = ["albumName": albumName]
+
+                    //self.registerUserIntoDatabaseWithUID(uid, values: values as [String : AnyObject])
+                }
             })
         }
+
+
+
+        let myUrl = NSURL(string: "http://www.aortiz6.create.stedwards.edu/directPhotosTEST/uploadImage.php?");
+        let request = NSMutableURLRequest(url:myUrl! as URL);
+        request.httpMethod = "POST";
+
+        let param = [
+            "albumName"  : albumName,
+            "albumID"    : albumID
+        ]
+        print(albumName)
+
+        let boundary = generateBoundaryString()
+
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+
+        let imageData = UIImageJPEGRepresentation(imagePreview.image!, 1)
+
+        if(imageData==nil)  { return; }
+
+        request.httpBody = createBodyWithParameters(parameters: param, filePathKey: "file", imageDataKey: imageData! as NSData, boundary: boundary) as Data
+
+
+        myActivityMonitorIndicator.startAnimating();
+
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+
+            if error != nil {
+                print("error=\(String(describing: error))")
+                return
+            }
+
+            // You can print out response object
+            print("******* response = \(String(describing: response))")
+
+            // Print out reponse body
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print("****** response data = \(responseString!)")
+
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
+
+                print(json!)
+
+                DispatchQueue.main.async(execute: {
+                    self.myActivityMonitorIndicator.stopAnimating()
+                    self.imagePreview.image = nil;
+                });
+
+            }catch
+            {
+                print(error)
+            }
+
+        }
+
+        task.resume()
     }
-    
-//    func imageUploadRequest()
-//    {
-//        // Get a reference to the storage service using the default Firebase App
-//        //let storage = FIRStorage.storage()
-//        // Create a storage reference from storage service
-//
-//        let imageName = NSUUID().uuidString
-//        let storageRef =  FIRStorage.storage().reference().child("album_images").child("\(imageName).png")
-//
-//        if let uploadData = UIImagePNGRepresentation(self.imagePreview.image!) {
-//
-//            storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
-//
-//                if let error = error {
-//                    print(error)
-//                    return
-//                }
-//
-//                if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
-//
-//                    let values = ["albumName": albumName]
-//
-//                    //self.registerUserIntoDatabaseWithUID(uid, values: values as [String : AnyObject])
-//                }
-//            })
-//        }
-//
-//
-//
-//        let myUrl = NSURL(string: "http://www.aortiz6.create.stedwards.edu/directPhotosTEST/uploadImage.php?");
-//        let request = NSMutableURLRequest(url:myUrl! as URL);
-//        request.httpMethod = "POST";
-//
-//        let param = [
-//            "albumName"  : albumName,
-//            "albumID"    : albumID
-//        ]
-//        print(albumName)
-//
-//        let boundary = generateBoundaryString()
-//
-//        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-//
-//
-//        let imageData = UIImageJPEGRepresentation(imagePreview.image!, 1)
-//
-//        if(imageData==nil)  { return; }
-//
-//        request.httpBody = createBodyWithParameters(parameters: param, filePathKey: "file", imageDataKey: imageData! as NSData, boundary: boundary) as Data
-//
-//
-//        myActivityMonitorIndicator.startAnimating();
-//
-//        let task = URLSession.shared.dataTask(with: request as URLRequest) {
-//            data, response, error in
-//
-//            if error != nil {
-//                print("error=\(String(describing: error))")
-//                return
-//            }
-//
-//            // You can print out response object
-//            print("******* response = \(String(describing: response))")
-//
-//            // Print out reponse body
-//            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-//            print("****** response data = \(responseString!)")
-//
-//            do {
-//                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
-//
-//                print(json!)
-//
-//                DispatchQueue.main.async(execute: {
-//                    self.myActivityMonitorIndicator.stopAnimating()
-//                    self.imagePreview.image = nil;
-//                });
-//
-//            }catch
-//            {
-//                print(error)
-//            }
-//
-//        }
-//
-//        task.resume()
-//    }
+
     
     
     func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
@@ -247,7 +229,6 @@ extension NSMutableData {
         append(data!)
     }
 }
-
 
 
 
