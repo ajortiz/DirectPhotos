@@ -33,9 +33,12 @@ class ViewController: UIViewController {
 
     func addAlbum(){
         let key = refAlbums.childByAutoId().key
+        let albumAccessKey = toolBox.randomString(length: 4)
+            //randomString(length: 4)
         let album = [
             "id": key,
-            "albumName": albumName_Input.text! ]
+            "albumName": albumName_Input.text!,
+            "albumAccessKey": albumAccessKey.text!]
         albumID = key
         refAlbums.child(key).setValue(album)
     }

@@ -12,6 +12,7 @@ import Firebase
 
 class uploadManager_ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    @IBOutlet weak var activityMonitor: UIActivityIndicatorView!
     @IBOutlet weak var imagePreview: UIImageView!
     var albumName = String()
     var albumID = String()
@@ -70,12 +71,16 @@ class uploadManager_ViewController: UIViewController,UIImagePickerControllerDele
         self.present(imagePickerController, animated: true, completion:nil)
         
     }
+    
+    
     @objc(imagePickerController:didFinishPickingMediaWithInfo:) func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
+       
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
             imagePreview.contentMode = .scaleAspectFit
             imagePreview.image = image
+            activityMonitor.startAnimating()
         }
         else
         {
@@ -93,7 +98,13 @@ class uploadManager_ViewController: UIViewController,UIImagePickerControllerDele
                     (metadata, error) in
                     if error != nil {
                         print("error")
+                        
                         return
+                    }
+                    else{
+                    self.activityMonitor.stopAnimating()
+
+                        print("Upload successful")
                     }
                     
                     print(metadata)

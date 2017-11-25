@@ -55,6 +55,21 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hkc-tB-3Ev">
+            <objects>
+                <viewController id="PXQ-ca-DnV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YX8-KD-I9J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="kZW-KD-jrC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lsn-tc-khD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242" y="159"/>
+        </scene>
         <!--Upload Manager View Controller-->
         <scene sceneID="1Am-yA-AMI">
             <objects>
@@ -76,6 +91,9 @@
                                     <constraint firstAttribute="height" constant="423" id="u9w-bg-riO"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2wR-fV-QYy">
+                                <rect key="frame" x="243" y="32" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -83,17 +101,21 @@
                             <constraint firstItem="pkl-Te-jiN" firstAttribute="bottom" secondItem="Yjk-5V-68i" secondAttribute="bottom" constant="109" id="1FB-gK-4Ar"/>
                             <constraint firstItem="Yjk-5V-68i" firstAttribute="trailing" secondItem="pkl-Te-jiN" secondAttribute="trailing" id="8Ms-7Q-fHW"/>
                             <constraint firstItem="Yjk-5V-68i" firstAttribute="top" secondItem="PYx-bt-wIg" secondAttribute="bottom" constant="78" id="BV4-hh-seA"/>
+                            <constraint firstItem="2wR-fV-QYy" firstAttribute="centerY" secondItem="PYx-bt-wIg" secondAttribute="centerY" id="ZNg-a6-fna"/>
+                            <constraint firstItem="2wR-fV-QYy" firstAttribute="leading" secondItem="PYx-bt-wIg" secondAttribute="trailing" constant="8" symbolic="YES" id="eW5-Vb-MS0"/>
                             <constraint firstItem="Yjk-5V-68i" firstAttribute="leading" secondItem="pkl-Te-jiN" secondAttribute="leading" id="qob-Ja-iyJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pkl-Te-jiN"/>
                     </view>
                     <connections>
+                        <outlet property="activityMonitor" destination="2wR-fV-QYy" id="liS-Pj-t8I"/>
                         <outlet property="imagePreview" destination="Yjk-5V-68i" id="yX7-cJ-5Ro"/>
+                        <segue destination="PXQ-ca-DnV" kind="show" id="hqP-hf-h9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2f-1X-vzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1265" y="159"/>
         </scene>
     </scenes>
 </document>
