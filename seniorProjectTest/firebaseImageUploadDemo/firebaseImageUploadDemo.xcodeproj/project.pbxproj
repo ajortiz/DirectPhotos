@@ -16,6 +16,7 @@
 		BECD8A501FBA981900B6BDC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BECD8A4F1FBA981900B6BDC4 /* GoogleService-Info.plist */; };
 		BECD8A521FBA99CB00B6BDC4 /* uploadManager_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD8A511FBA99CB00B6BDC4 /* uploadManager_ViewController.swift */; };
 		BEF1FD091FCA3A42000AB47B /* toolBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1FD081FCA3A42000AB47B /* toolBox.swift */; };
+		BEF1FD0B1FCA52D6000AB47B /* AlbumView_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF1FD0A1FCA52D6000AB47B /* AlbumView_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BECD8A4F1FBA981900B6BDC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BECD8A511FBA99CB00B6BDC4 /* uploadManager_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadManager_ViewController.swift; sourceTree = "<group>"; };
 		BEF1FD081FCA3A42000AB47B /* toolBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolBox.swift; sourceTree = "<group>"; };
+		BEF1FD0A1FCA52D6000AB47B /* AlbumView_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView_ViewController.swift; sourceTree = "<group>"; };
 		F15D315E79A94841F401ADAF /* Pods_firebaseImageUploadDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseImageUploadDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B98C3EF92AFF9D1636A358 /* Pods-firebaseImageUploadDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseImageUploadDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-firebaseImageUploadDemo/Pods-firebaseImageUploadDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,9 +86,10 @@
 		BECD8A3C1FBA97A500B6BDC4 /* firebaseImageUploadDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BECD8A411FBA97A500B6BDC4 /* Main.storyboard */,
+				BEF1FD0A1FCA52D6000AB47B /* AlbumView_ViewController.swift */,
 				BECD8A3D1FBA97A500B6BDC4 /* AppDelegate.swift */,
 				BECD8A3F1FBA97A500B6BDC4 /* ViewController.swift */,
-				BECD8A411FBA97A500B6BDC4 /* Main.storyboard */,
 				BECD8A511FBA99CB00B6BDC4 /* uploadManager_ViewController.swift */,
 				BEF1FD081FCA3A42000AB47B /* toolBox.swift */,
 				BECD8A441FBA97A500B6BDC4 /* Assets.xcassets */,
@@ -225,6 +228,7 @@
 				BECD8A521FBA99CB00B6BDC4 /* uploadManager_ViewController.swift in Sources */,
 				BECD8A3E1FBA97A500B6BDC4 /* AppDelegate.swift in Sources */,
 				BEF1FD091FCA3A42000AB47B /* toolBox.swift in Sources */,
+				BEF1FD0B1FCA52D6000AB47B /* AlbumView_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

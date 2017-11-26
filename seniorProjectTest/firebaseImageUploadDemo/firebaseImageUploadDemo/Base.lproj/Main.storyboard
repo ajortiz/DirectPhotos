@@ -78,8 +78,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYx-bt-wIg">
-                                <rect key="frame" x="140" y="27" width="95" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYx-bt-wIg">
+                                <rect key="frame" x="38" y="53" width="95" height="30"/>
                                 <state key="normal" title="Upload Image"/>
                                 <connections>
                                     <action selector="uploadImageTapped:" destination="Vkt-rX-H3m" eventType="touchUpInside" id="Wub-v9-CWC"/>
@@ -91,9 +91,17 @@
                                     <constraint firstAttribute="height" constant="423" id="u9w-bg-riO"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2wR-fV-QYy">
-                                <rect key="frame" x="243" y="32" width="20" height="20"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2wR-fV-QYy">
+                                <rect key="frame" x="141" y="58" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDH-dz-CWP">
+                                <rect key="frame" x="244" y="53" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Album"/>
+                                <connections>
+                                    <segue destination="PXQ-ca-DnV" kind="show" identifier="toAlbumView" id="HxY-Tg-8d1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -110,12 +118,11 @@
                     <connections>
                         <outlet property="activityMonitor" destination="2wR-fV-QYy" id="liS-Pj-t8I"/>
                         <outlet property="imagePreview" destination="Yjk-5V-68i" id="yX7-cJ-5Ro"/>
-                        <segue destination="PXQ-ca-DnV" kind="show" id="hqP-hf-h9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O2f-1X-vzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="159"/>
+            <point key="canvasLocation" x="1264.8" y="158.77061469265368"/>
         </scene>
     </scenes>
 </document>

@@ -14,6 +14,8 @@ class ViewController: UIViewController {
 
     var refAlbums: FIRDatabaseReference!
     var albumID = String()
+    let toolBoxController: toolBox = toolBox()
+    
     
     @IBOutlet weak var albumName_Input: UITextField!
     @IBOutlet weak var createAlbum_Btn: UIButton!
@@ -33,12 +35,12 @@ class ViewController: UIViewController {
 
     func addAlbum(){
         let key = refAlbums.childByAutoId().key
-        let albumAccessKey = toolBox.randomString(length: 4)
+        let albumAccessKey = toolBoxController.randomString(length: 4)
             //randomString(length: 4)
         let album = [
             "id": key,
             "albumName": albumName_Input.text!,
-            "albumAccessKey": albumAccessKey.text!]
+            "albumAccessKey": albumAccessKey ]
         albumID = key
         refAlbums.child(key).setValue(album)
     }

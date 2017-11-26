@@ -113,7 +113,13 @@ class uploadManager_ViewController: UIViewController,UIImagePickerControllerDele
         }
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAlbumView" {
+            if let viewController = segue.destination as? AlbumView_ViewController {
+                viewController.databaseChildName = albumID
+                
+            }
+        }}
     
     func randomString(length: Int) -> String {
         
