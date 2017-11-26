@@ -30,7 +30,7 @@ class albumView_ViewController: UIViewController,UINavigationControllerDelegate 
         dbRefLink = FIRDatabase.database().reference().child("albums")
         storage = FIRStorage.storage()
         
-        //loadImages()
+        loadImages()
         
         super.viewDidLoad()
 
@@ -46,20 +46,20 @@ class albumView_ViewController: UIViewController,UINavigationControllerDelegate 
     
     func loadImages()
     {
-        print(databaseChildName)
-        let dbRef = self.dbRefLink.child(databaseChildName)
+        print("\n" + databaseChildName + "\n")
+       let dbRef = self.dbRefLink.child(databaseChildName)
         dbRef.observe(.childAdded, with: { (snapshot) in
             // Get download URL from snapshot
-            let downloadURL = snapshot.value as! String
-            // Create a storage reference from the URL
-            let storageRef = self.storage.reference(forURL: downloadURL)
-            // Download the data, assuming a max size of 1MB (you can change this as necessary)
-            storageRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                // Create a UIImage, add it to the array
-                let pic = UIImage(data: data!)
-                self.picArray.append(pic!)
-                print("inside loadImages")
-            }
+//            let downloadURL = snapshot.value as! String
+//            // Create a storage reference from the URL
+//            let storageRef = self.storage.reference(forURL: downloadURL)
+////            // Download the data, assuming a max size of 1MB (you can change this as necessary)
+////            storageRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+////                // Create a UIImage, add it to the array
+////                let pic = UIImage(data: data!)
+////                self.picArray.append(pic!)
+////                print("inside loadImages")
+////            }
         })
         
 

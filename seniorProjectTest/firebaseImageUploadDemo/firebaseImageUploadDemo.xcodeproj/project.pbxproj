@@ -86,9 +86,10 @@
 		BECD8A3C1FBA97A500B6BDC4 /* firebaseImageUploadDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BEF1FD0C1FCA61F8000AB47B /* Model */,
+				BEF1FD0C1FCA61F8000AB47B /* Helpers */,
 				BEF1FD0D1FCA6211000AB47B /* View */,
 				BEF1FD0E1FCA626D000AB47B /* Controller */,
+				BECD8A3D1FBA97A500B6BDC4 /* AppDelegate.swift */,
 				BECD8A441FBA97A500B6BDC4 /* Assets.xcassets */,
 				BECD8A491FBA97A500B6BDC4 /* Info.plist */,
 				BECD8A4F1FBA981900B6BDC4 /* GoogleService-Info.plist */,
@@ -96,13 +97,12 @@
 			path = firebaseImageUploadDemo;
 			sourceTree = "<group>";
 		};
-		BEF1FD0C1FCA61F8000AB47B /* Model */ = {
+		BEF1FD0C1FCA61F8000AB47B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				BECD8A3D1FBA97A500B6BDC4 /* AppDelegate.swift */,
 				BEF1FD081FCA3A42000AB47B /* toolBox.swift */,
 			);
-			path = Model;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		BEF1FD0D1FCA6211000AB47B /* View */ = {
