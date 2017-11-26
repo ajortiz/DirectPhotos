@@ -86,18 +86,42 @@
 		BECD8A3C1FBA97A500B6BDC4 /* firebaseImageUploadDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BECD8A411FBA97A500B6BDC4 /* Main.storyboard */,
-				BEF1FD0A1FCA52D6000AB47B /* AlbumView_ViewController.swift */,
-				BECD8A3D1FBA97A500B6BDC4 /* AppDelegate.swift */,
-				BECD8A3F1FBA97A500B6BDC4 /* ViewController.swift */,
-				BECD8A511FBA99CB00B6BDC4 /* uploadManager_ViewController.swift */,
-				BEF1FD081FCA3A42000AB47B /* toolBox.swift */,
+				BEF1FD0C1FCA61F8000AB47B /* Model */,
+				BEF1FD0D1FCA6211000AB47B /* View */,
+				BEF1FD0E1FCA626D000AB47B /* Controller */,
 				BECD8A441FBA97A500B6BDC4 /* Assets.xcassets */,
-				BECD8A461FBA97A500B6BDC4 /* LaunchScreen.storyboard */,
 				BECD8A491FBA97A500B6BDC4 /* Info.plist */,
 				BECD8A4F1FBA981900B6BDC4 /* GoogleService-Info.plist */,
 			);
 			path = firebaseImageUploadDemo;
+			sourceTree = "<group>";
+		};
+		BEF1FD0C1FCA61F8000AB47B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BECD8A3D1FBA97A500B6BDC4 /* AppDelegate.swift */,
+				BEF1FD081FCA3A42000AB47B /* toolBox.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BEF1FD0D1FCA6211000AB47B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BECD8A411FBA97A500B6BDC4 /* Main.storyboard */,
+				BECD8A461FBA97A500B6BDC4 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEF1FD0E1FCA626D000AB47B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BECD8A3F1FBA97A500B6BDC4 /* ViewController.swift */,
+				BECD8A511FBA99CB00B6BDC4 /* uploadManager_ViewController.swift */,
+				BEF1FD0A1FCA52D6000AB47B /* AlbumView_ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

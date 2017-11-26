@@ -16,7 +16,8 @@ class uploadManager_ViewController: UIViewController,UIImagePickerControllerDele
     @IBOutlet weak var imagePreview: UIImageView!
     var albumName = String()
     var albumID = String()
-    
+    let toolBoxController: toolBox = toolBox()
+
     override func viewDidLoad() {
       
         
@@ -88,7 +89,7 @@ class uploadManager_ViewController: UIViewController,UIImagePickerControllerDele
         }
         
         self.dismiss(animated: true, completion: nil)
-        let imageName = randomString(length: 5)
+        let imageName = toolBoxController.randomString(length: 5)
         
         print (albumID + "/" + imageName + ".png")
         let storageRef = FIRStorage.storage().reference().child(albumID + "/" + imageName + ".png")
@@ -121,21 +122,6 @@ class uploadManager_ViewController: UIViewController,UIImagePickerControllerDele
                 
             }
         }}
-    
-    func randomString(length: Int) -> String {
-        
-        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let len = UInt32(letters.length)
-        
-        var randomString = ""
-        
-        for _ in 0 ..< length {
-            let rand = arc4random_uniform(len)
-            var nextChar = letters.character(at: Int(rand))
-            randomString += NSString(characters: &nextChar, length: 1) as String
-        }
-        
-        return randomString
-    }
+  
 
 }
