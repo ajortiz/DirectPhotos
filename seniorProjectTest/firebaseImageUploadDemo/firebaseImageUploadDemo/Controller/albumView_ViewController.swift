@@ -11,7 +11,7 @@ import FirebaseDatabase
 import FirebaseStorage
 import Firebase
 
-class AlbumView_ViewController: UIViewController,UINavigationControllerDelegate {
+class albumView_ViewController: UIViewController,UINavigationControllerDelegate {
 
     var databaseChildName = String()
     var albumName = String()
