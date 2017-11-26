@@ -98,12 +98,12 @@ class uploadManager_ViewController: UIViewController,UIImagePickerControllerDele
                     (metadata, error) in
                     if error != nil {
                         print("error")
-                        
+                        self.imagePreview.image = nil
                         return
                     }
                     else{
                     self.activityMonitor.stopAnimating()
-
+                        
                         print("Upload successful")
                     }
                     
@@ -117,6 +117,7 @@ class uploadManager_ViewController: UIViewController,UIImagePickerControllerDele
         if segue.identifier == "toAlbumView" {
             if let viewController = segue.destination as? AlbumView_ViewController {
                 viewController.databaseChildName = albumID
+                viewController.albumName = albumName
                 
             }
         }}

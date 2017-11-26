@@ -11,16 +11,31 @@ import FirebaseDatabase
 import FirebaseStorage
 import Firebase
 
-class AlbumView_ViewController: UIViewController {
+class AlbumView_ViewController: UIViewController,UINavigationControllerDelegate {
 
     var databaseChildName = String()
-    var database: FIRDatabase!
+    var albumName = String()
+    var dbRefLink: FIRDatabaseReference!
     var storage: FIRStorage!
     
+    @IBOutlet weak var albumName_Lbl: UILabel!
+    
+
+    // Initialize an array for your pictures
+    var picArray = [UIImage]()
     
     override func viewDidLoad() {
+        // Initialize Database, Auth, Storage
+        albumName_Lbl.text? = albumName
+        dbRefLink = FIRDatabase.database().reference().child("albums")
+        storage = FIRStorage.storage()
+        
+        //loadImages()
+        
         super.viewDidLoad()
 
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -29,19 +44,25 @@ class AlbumView_ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func loadImages()
+    {
+        print(databaseChildName)
+        let dbRef = self.dbRefLink.child(databaseChildName)
+        dbRef.observe(.childAdded, with: { (snapshot) in
+            // Get download URL from snapshot
+            let downloadURL = snapshot.value as! String
+            // Create a storage reference from the URL
+            let storageRef = self.storage.reference(forURL: downloadURL)
+            // Download the data, assuming a max size of 1MB (you can change this as necessary)
+            storageRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                // Create a UIImage, add it to the array
+                let pic = UIImage(data: data!)
+                self.picArray.append(pic!)
+                print("inside loadImages")
+            }
+        })
+        
 
-//    let dbRef = database.reference().child(databaseChildName)
-//    dbRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
-//    // Get download URL from snapshot
-//    let downloadURL = snapshot.value() as! String
-//    // Create a storage reference from the URL
-//    let storageRef = storage.referenceFromURL(downloadURL)
-//    // Download the data, assuming a max size of 1MB (you can change this as necessary)
-//    storageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
-//    // Create a UIImage, add it to the array
-//    let pic = UIImage(data: data)
-//    picArray.append(pic)
-//    })
-//    })
-
+    } //end loadImages
+        
 }
