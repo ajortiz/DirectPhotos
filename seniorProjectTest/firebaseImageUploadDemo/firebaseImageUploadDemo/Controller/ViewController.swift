@@ -66,9 +66,8 @@ class ViewController: UIViewController {
             FIRAuth.auth()?.createUser(withEmail: email_Input.text!, password: password_Input.text!) { (user, error) in
                 
                 if error == nil {
-                    print("You have successfully signed up")
+                    print("\n You have successfully signed up \n")
                     //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
-                    
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "userHomeVC")
                     self.present(vc!, animated: true, completion: nil)
                     
