@@ -11,13 +11,26 @@ import FirebaseAuth
 import Firebase
 
 class userHome_ViewController: UIViewController {
-
+    let user = FIRAuth.auth()?.currentUser
+    var uid = String()
+    //  var emailVerified = Bool
+    
+    //emailVerified = user.emailVerified;
+   
+    
+    @IBOutlet weak var usrID_Lbl: UILabel!
+    
     override func viewDidLoad() {
+         uid = (user?.uid)!
+        usrID_Lbl.text = uid
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

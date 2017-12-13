@@ -49,8 +49,12 @@ class login_ViewController: UIViewController {
                     print("You have successfully logged in")
                     
                     //Go to the HomeViewController if the login is sucessful
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier:"toHomeFromLogin")
-                    self.present(vc!, animated: true, completion: nil)
+                    
+                
+                   let vc = self.storyboard?.instantiateViewController(withIdentifier:"usrHomeVC")
+                    
+                    
+                self.present(vc!, animated: true, completion: nil)
                     
                 } else {
                     

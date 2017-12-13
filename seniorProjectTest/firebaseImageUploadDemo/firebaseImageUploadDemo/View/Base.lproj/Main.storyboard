@@ -64,7 +64,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapCreateAccount_Btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6te-R6-YRI"/>
-                                    <segue destination="VQ1-hh-u00" kind="presentation" identifier="userHomeVC" modalTransitionStyle="coverVertical" id="PbP-bd-J5k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBs-4L-sOa">
@@ -77,11 +76,19 @@
                                     <segue destination="5Ib-bI-vXN" kind="presentation" modalTransitionStyle="crossDissolve" id="kYs-jy-4uY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3C8-0O-3Rx">
+                                <rect key="frame" x="81" y="461" width="202" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="accountCreationStatus_Lbl" destination="3C8-0O-3Rx" id="hnV-Ht-A5S"/>
                         <outlet property="albumName_Input" destination="F14-KD-iQ7" id="iuy-QN-tf4"/>
                         <outlet property="createAlbum_Btn" destination="8kU-60-KDi" id="rpX-J1-r5U"/>
                         <outlet property="email_Input" destination="peq-yy-l1v" id="qRi-DH-co9"/>
@@ -203,7 +210,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapLogin_Btn:" destination="5Ib-bI-vXN" eventType="touchUpInside" id="hMV-ae-cbZ"/>
-                                    <segue destination="VQ1-hh-u00" kind="show" identifier="toHomeFromLogin" id="lqj-0J-En8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DirectPhotos." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRo-e9-tQS">
@@ -229,7 +235,7 @@
         <!--User Home View Controller-->
         <scene sceneID="R7M-Gh-Bqa">
             <objects>
-                <viewController id="VQ1-hh-u00" customClass="userHome_ViewController" customModule="firebaseImageUploadDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="usrHomeVC" id="VQ1-hh-u00" customClass="userHome_ViewController" customModule="firebaseImageUploadDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Suw-ar-LOd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,18 +257,25 @@
                                     <action selector="didTapLogout_Btn:" destination="VQ1-hh-u00" eventType="touchUpInside" id="5Iu-gn-EtN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="usr_ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcS-4O-PSl">
+                                <rect key="frame" x="183" y="82" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="K5M-C2-ryc"/>
                     </view>
+                    <connections>
+                        <outlet property="usrID_Lbl" destination="PcS-4O-PSl" id="hki-GF-6ZP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfF-PM-Fy4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1701.5999999999999" y="259.52023988005999"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="PbP-bd-J5k"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var email_Input: UITextField!
     @IBOutlet weak var password_Input: UITextField!
     
+    @IBOutlet weak var accountCreationStatus_Lbl: UILabel!
+    
     override func viewDidLoad() {
         refAlbums = FIRDatabase.database().reference().child("albums")
         
@@ -68,7 +70,9 @@ class ViewController: UIViewController {
                 if error == nil {
                     print("\n You have successfully signed up \n")
                     //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "userHomeVC")
+                    
+                    self.accountCreationStatus_Lbl.text = "Account Susccessfully Created"
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "usrHomeVC")
                     self.present(vc!, animated: true, completion: nil)
                     
                 } else {
