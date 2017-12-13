@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B86AABFB673EB8B23552246C /* Pods_firebaseImageUploadDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15D315E79A94841F401ADAF /* Pods_firebaseImageUploadDemo.framework */; };
 		BE6292651FE11274008E3D16 /* userHome_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6292641FE11274008E3D16 /* userHome_ViewController.swift */; };
+		BE6292671FE1145D008E3D16 /* login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6292661FE1145D008E3D16 /* login_ViewController.swift */; };
 		BECD8A3E1FBA97A500B6BDC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD8A3D1FBA97A500B6BDC4 /* AppDelegate.swift */; };
 		BECD8A401FBA97A500B6BDC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD8A3F1FBA97A500B6BDC4 /* ViewController.swift */; };
 		BECD8A431FBA97A500B6BDC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BECD8A411FBA97A500B6BDC4 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		4A87D1F98F0FA96FB047885C /* Pods-firebaseImageUploadDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebaseImageUploadDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firebaseImageUploadDemo/Pods-firebaseImageUploadDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BE6292641FE11274008E3D16 /* userHome_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = userHome_ViewController.swift; path = firebaseImageUploadDemo/Controller/userHome_ViewController.swift; sourceTree = SOURCE_ROOT; };
+		BE6292661FE1145D008E3D16 /* login_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = login_ViewController.swift; path = firebaseImageUploadDemo/Controller/login_ViewController.swift; sourceTree = SOURCE_ROOT; };
 		BECD8A3A1FBA97A500B6BDC4 /* firebaseImageUploadDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseImageUploadDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECD8A3D1FBA97A500B6BDC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BECD8A3F1FBA97A500B6BDC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				BE6292641FE11274008E3D16 /* userHome_ViewController.swift */,
+				BE6292661FE1145D008E3D16 /* login_ViewController.swift */,
 				BECD8A3F1FBA97A500B6BDC4 /* ViewController.swift */,
 				BECD8A511FBA99CB00B6BDC4 /* uploadManager_ViewController.swift */,
 				BEF1FD0A1FCA52D6000AB47B /* albumView_ViewController.swift */,
@@ -255,6 +258,7 @@
 				BECD8A521FBA99CB00B6BDC4 /* uploadManager_ViewController.swift in Sources */,
 				BECD8A3E1FBA97A500B6BDC4 /* AppDelegate.swift in Sources */,
 				BEF1FD091FCA3A42000AB47B /* toolBox.swift in Sources */,
+				BE6292671FE1145D008E3D16 /* login_ViewController.swift in Sources */,
 				BE6292651FE11274008E3D16 /* userHome_ViewController.swift in Sources */,
 				BEF1FD0B1FCA52D6000AB47B /* albumView_ViewController.swift in Sources */,
 			);
