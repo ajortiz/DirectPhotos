@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseDatabase
 import Firebase
 
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var albumName_Input: UITextField!
     @IBOutlet weak var createAlbum_Btn: UIButton!
 
+    @IBOutlet weak var email_Input: UITextField!
+    @IBOutlet weak var password_Input: UITextField!
     
     override func viewDidLoad() {
         refAlbums = FIRDatabase.database().reference().child("albums")
@@ -49,6 +52,41 @@ class ViewController: UIViewController {
         print(albumName_Input.text!)
         addAlbum()
     }
+    
+   @IBAction func didTapCreateAccount_Btn(_ sender: Any) {
+        if email_Input.text! == "" {
+            let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
+            
+        } else {
+            FIRAuth.auth()?.createUser(withEmail: email_Input.text!, password: password_Input.text!) { (user, error) in
+                
+                if error == nil {
+                    print("You have successfully signed up")
+                    //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "userHomeVC")
+                    self.present(vc!, animated: true, completion: nil)
+                    
+                } else {
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toUploadVC" {
