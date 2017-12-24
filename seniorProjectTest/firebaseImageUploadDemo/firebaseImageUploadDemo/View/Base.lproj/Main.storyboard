@@ -150,9 +150,8 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2wR-fV-QYy">
                                 <rect key="frame" x="141" y="58" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDH-dz-CWP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDH-dz-CWP">
                                 <rect key="frame" x="244" y="53" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View Album"/>
                                 <connections>
                                     <segue destination="PXQ-ca-DnV" kind="show" identifier="toAlbumView" id="HxY-Tg-8d1"/>
@@ -165,7 +164,10 @@
                             <constraint firstItem="pkl-Te-jiN" firstAttribute="bottom" secondItem="Yjk-5V-68i" secondAttribute="bottom" constant="20" id="1FB-gK-4Ar"/>
                             <constraint firstItem="Yjk-5V-68i" firstAttribute="trailing" secondItem="pkl-Te-jiN" secondAttribute="trailing" id="8Ms-7Q-fHW"/>
                             <constraint firstItem="Yjk-5V-68i" firstAttribute="top" secondItem="PYx-bt-wIg" secondAttribute="bottom" constant="52" id="BV4-hh-seA"/>
+                            <constraint firstItem="pkl-Te-jiN" firstAttribute="trailing" secondItem="iDH-dz-CWP" secondAttribute="trailing" constant="31" id="Eqq-Sr-iSC"/>
+                            <constraint firstItem="iDH-dz-CWP" firstAttribute="baseline" secondItem="PYx-bt-wIg" secondAttribute="baseline" id="Oa2-m2-4pl"/>
                             <constraint firstItem="2wR-fV-QYy" firstAttribute="centerY" secondItem="PYx-bt-wIg" secondAttribute="centerY" id="ZNg-a6-fna"/>
+                            <constraint firstItem="iDH-dz-CWP" firstAttribute="leading" secondItem="2wR-fV-QYy" secondAttribute="trailing" constant="83" id="bP5-25-RkS"/>
                             <constraint firstItem="2wR-fV-QYy" firstAttribute="leading" secondItem="PYx-bt-wIg" secondAttribute="trailing" constant="8" symbolic="YES" id="eW5-Vb-MS0"/>
                             <constraint firstItem="Yjk-5V-68i" firstAttribute="leading" secondItem="pkl-Te-jiN" secondAttribute="leading" id="qob-Ja-iyJ"/>
                         </constraints>
@@ -219,6 +221,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbq-VL-2SQ">
+                                <rect key="frame" x="80" y="290" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="coverVertical" id="f8J-i7-PGU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="RIj-RA-XDW"/>

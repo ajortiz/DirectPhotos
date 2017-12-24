@@ -38,21 +38,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
     func addAlbum(){
         let key = refAlbums.childByAutoId().key
         let albumAccessKey = toolBoxController.randomString(length: 4)
-            //randomString(length: 4)
         let album = [
             "id": key,
             "albumName": albumName_Input.text!,
             "albumAccessKey": albumAccessKey ]
         albumID = key
         refAlbums.child(key).setValue(album)
+        
     }
+    
+    
+    
     @IBAction func didTapCreateAlbum_Btn(_ sender: Any) {
         print("IN DID TAP CREATE ALBUM: ")
         print(albumName_Input.text!)
+        
         addAlbum()
+        
     }
     
    @IBAction func didTapCreateAccount_Btn(_ sender: Any) {
