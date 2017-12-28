@@ -1,4 +1,4 @@
-# DirectPhotos
+# DirectPhotos.
 iOS App - Senior Project!
 
 The app that makes photo sharing amongst groups of people simple. This app will provide users the ability to ‘create’ and name an album. A random unique access key is generated for the album. The user creating the album shares the access key with friends, family, whomever is involved in the photo sharing occasion. Those who receive the access key will go to the app, enter the album key and right away have the option to upload to the album, or view all images in the album. Only those who have the access key will be able to upload and view images. Users will also be able to save images to their iPhone’s camera roll. 
