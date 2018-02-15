@@ -13,6 +13,6 @@ Progress Made:
 	- Album key generation implemented
 	- Album roll implemented: ability to view images in album
 	- Database creation created
-
+	- Switched form Firebase to PHP and MySQL for backened dbs
 Next Milestone:
 	- Implement ability to 'sign in' with email to access multiple albums, if saved
