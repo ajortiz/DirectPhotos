@@ -1,6 +1,0 @@
-framework module Pods_DirectPhotos {
-  umbrella header "Pods-DirectPhotos-umbrella.h"
-
-  export *
-  module * { export * }
-}
