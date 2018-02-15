@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     let toolBoxController: toolBox = toolBox()
     
     
+    @IBOutlet weak var albumEmail_Input: UITextField!
     @IBOutlet weak var albumName_Input: UITextField!
     @IBOutlet weak var createAlbum_Btn: UIButton!
 
@@ -50,6 +51,8 @@ class ViewController: UIViewController {
         albumID = key
         refAlbums.child(key).setValue(album)
         
+       
+        
     }
     
     
@@ -57,8 +60,7 @@ class ViewController: UIViewController {
     @IBAction func didTapCreateAlbum_Btn(_ sender: Any) {
         print("IN DID TAP CREATE ALBUM: ")
         print(albumName_Input.text!)
-        
-        addAlbum()
+ 
         
     }
     
@@ -100,6 +102,19 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toUploadVC" {
+            if albumEmail_Input.text! == "" {
+                let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                present(alertController, animated: true, completion: nil)
+            }
+            addAlbum()
+            let alertController = UIAlertController(title: "Success!", message: "Album has been created, your album key has been emailed to you.", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
             if let viewController = segue.destination as? uploadManager_ViewController {
 
                 viewController.albumName = albumName_Input.text!

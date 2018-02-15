@@ -96,6 +96,7 @@
                     </view>
                     <connections>
                         <outlet property="accountCreationStatus_Lbl" destination="3C8-0O-3Rx" id="hnV-Ht-A5S"/>
+                        <outlet property="albumEmail_Input" destination="4Lf-Z6-UQx" id="wM9-cF-DY9"/>
                         <outlet property="albumName_Input" destination="F14-KD-iQ7" id="iuy-QN-tf4"/>
                         <outlet property="createAlbum_Btn" destination="8kU-60-KDi" id="rpX-J1-r5U"/>
                         <outlet property="email_Input" destination="peq-yy-l1v" id="qRi-DH-co9"/>

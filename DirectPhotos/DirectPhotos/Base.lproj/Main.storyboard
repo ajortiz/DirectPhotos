@@ -339,7 +339,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pt-7Z-nVt">
-                                <rect key="frame" x="95" y="57" width="69" height="17"/>
+                                <rect key="frame" x="95" y="59" width="69" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="kAy-vL-Lbk"/>
                                     <constraint firstAttribute="height" constant="17" id="kL0-HC-WZB"/>
@@ -440,7 +440,6 @@
         <image name="logoIco" width="375" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j3o-JP-JYP"/>
         <segue reference="rqw-3P-c1M"/>
         <segue reference="d0c-Th-ZTW"/>
     </inferredMetricsTieBreakers>

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "directPhotosWeb": "directphotosapp",
+    "default": "directphotosapp"
+  }
+}
