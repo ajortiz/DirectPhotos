@@ -91,13 +91,13 @@ class ViewController: UIViewController {
     
     }// end login function
     
-    
+   */
     
     
 // ----- CREATE NEW ACCOUNT --------
     
     //SAVE Button action method
-    @IBAction func buttonSave(sender: UIButton) {
+    func createEmailAccount(emailToRegister: String) {
         //created NSURL
         let requestURL = NSURL(string: URL_SAVE_NEW_MEMBER)
         
@@ -108,11 +108,11 @@ class ViewController: UIViewController {
         request.httpMethod = "POST"
         
         //getting values from text fields
-        let newEmail=newEmailText.text
-        let newPassword = newPasswordText.text
+        //let newEmail=newEmailText.text
+        //let newPassword = newPasswordText.text
         
         //creating the post parameter by concatenating the keys and values from text field
-        let postParameters = "email="+newEmail!+"&password="+newPassword!
+        let postParameters = "email="+emailToRegister
         
         //adding the parameters to request body
         request.httpBody = postParameters.data(using: String.Encoding.utf8)
@@ -153,7 +153,7 @@ class ViewController: UIViewController {
         //executing the task
         task.resume()
     }
-    */
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -191,7 +191,7 @@ class ViewController: UIViewController {
         let emailAddress=emailAddressText.text
         let newKey=generateKey(length: 4)
         
-        
+        createEmailAccount(emailToRegister: emailAddress!)
         print(newKey)
         
         

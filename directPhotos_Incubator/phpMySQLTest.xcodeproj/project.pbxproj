@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3C03DF2038C42900647D55 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3C03DE2038C42900647D55 /* Helper.swift */; };
 		BE5220C11EB59F8D00CA5B31 /* AlbumRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5220C01EB59F8D00CA5B31 /* AlbumRollViewController.swift */; };
 		BE78EAAB1EAC0F25002B058B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78EAAA1EAC0F25002B058B /* AppDelegate.swift */; };
 		BE78EAAD1EAC0F25002B058B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE78EAAC1EAC0F25002B058B /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE3C03DE2038C42900647D55 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		BE5220C01EB59F8D00CA5B31 /* AlbumRollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumRollViewController.swift; sourceTree = "<group>"; };
 		BE78EAA71EAC0F25002B058B /* phpMySQLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = phpMySQLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE78EAAA1EAC0F25002B058B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				BE78EAAA1EAC0F25002B058B /* AppDelegate.swift */,
 				BE78EAAC1EAC0F25002B058B /* ViewController.swift */,
+				BE3C03DE2038C42900647D55 /* Helper.swift */,
 				BE78EAAE1EAC0F25002B058B /* Main.storyboard */,
 				BE5220C01EB59F8D00CA5B31 /* AlbumRollViewController.swift */,
 				BE8391591EB11F7400ED374E /* UploadImageViewController.swift */,
@@ -145,6 +148,7 @@
 			files = (
 				BE78EAAD1EAC0F25002B058B /* ViewController.swift in Sources */,
 				BE5220C11EB59F8D00CA5B31 /* AlbumRollViewController.swift in Sources */,
+				BE3C03DF2038C42900647D55 /* Helper.swift in Sources */,
 				BE78EAAB1EAC0F25002B058B /* AppDelegate.swift in Sources */,
 				BE83915A1EB11F7400ED374E /* UploadImageViewController.swift in Sources */,
 			);
