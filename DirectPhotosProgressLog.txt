@@ -16,3 +16,10 @@ Progress Made:
 	- Switched form Firebase to PHP and MySQL for backened dbs
 Next Milestone:
 	- Implement ability to 'sign in' with email to access multiple albums, if saved
+
+
+============
+17 February
+Progress Made:
+	- Added Helper.swift file
+	- Implemented ability to store new email addresses in database, so when user creates new alubm, their email address also gets stored in database

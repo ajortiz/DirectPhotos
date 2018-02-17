@@ -1,6 +1,6 @@
 //
 //  Helper.swift
-//  File contains helper methods used in other controller files
+//  File contains helper methods used in other classes
 //  phpMySQLTest
 //
 //  Created by Amanda Ortiz on 2/17/18.
