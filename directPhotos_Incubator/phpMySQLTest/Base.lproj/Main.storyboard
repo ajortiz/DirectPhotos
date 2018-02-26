@@ -426,7 +426,6 @@
         <image name="logoIco" width="375" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EBO-mr-xph"/>
         <segue reference="jTP-kI-b30"/>
         <segue reference="ffx-dB-ia5"/>
     </inferredMetricsTieBreakers>
