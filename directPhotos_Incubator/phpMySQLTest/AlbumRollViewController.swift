@@ -171,7 +171,14 @@ class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:PhotoCell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
         cell.itemImage?.image = images[indexPath.row]
-               return cell
+        cell.itemImage?.contentMode = .scaleAspectFit
+        cell.itemImage?.isUserInteractionEnabled = true
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target:self, action: Selector(("longPressed:")))
+        longPressRecognizer.minimumPressDuration = 0.5
+        
+    cell.itemImage?.addGestureRecognizer((longPressRecognizer))
+        return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return images.count
@@ -180,18 +187,22 @@ class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableV
     func updateTableView() {
         imageTableView.reloadData()
     }
-
+    
+    func longPressed(sender: UILongPressGestureRecognizer) {
+        UIImageWriteToSavedPhotosAlbum(imageNames.image!, self,  "image:didFinishSavingWithError:contextInfo:", nil)
+    }
 }
+
 class PhotoCell: UITableViewCell {
     
     @IBOutlet weak var itemImage: UIImageView!
     
-   
     
     var delegate: ReloadTable?
     
     func reloadItemTable () {
         delegate?.updateTableView()
+       
     }
 }
 

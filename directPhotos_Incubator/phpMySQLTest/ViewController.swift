@@ -13,7 +13,7 @@ var albumName: String = ""
 var loggedInPath: String = ""
 var albumKey : String = ""
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
     //URL to our web service
     let URL_SAVE_NEW_MEMBER = "http://www.aortiz6.create.stedwards.edu/directPhotosTEST/createUser.php?"
     let URL_SAVE_GET_MEMBER = "http://www.aortiz6.create.stedwards.edu/directPhotosTEST/loginUser.php?"
@@ -99,16 +99,7 @@ class ViewController: UIViewController {
     //SAVE Button action method
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     /// ---------------------------------
     // --------- CREATE ALBUM -----------
     /// ---------------------------------
@@ -117,7 +108,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var newAlbumName: UITextField!
     @IBOutlet weak var emailAddressText: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        emailAddressText.delegate = self
+        newAlbumName.delegate = self
+        // Do any additional setup after loading the view, typically from a nib.
+    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if(textField == newAlbumName){
+            emailAddressText.becomeFirstResponder()
+        }else if (textField == emailAddressText){
+            textField.resignFirstResponder()
+        }
+        return true
+    }
     
     @IBAction func tappedCreateAlbumBtn(_ sender: Any) {
         
