@@ -8,7 +8,8 @@
 
 import UIKit
 
-class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ReloadTable{
+class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ReloadTable, CellImageTapDelegate{
+    
     
  
     let URL_GET_ALBUM_IMAGES = "http://www.aortiz6.create.stedwards.edu/directPhotosTEST/getAlbumImages.php?"
@@ -25,6 +26,8 @@ class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         imageTableView.reloadData()
         currentAlbumLbl.text! = String(albumName)
+        
+     
         getAlbumImages()
       
      
@@ -38,8 +41,7 @@ class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
   
-    //print (currentAlbumName)
-    
+  
     
     
     /// ---------------------------------
@@ -163,23 +165,44 @@ class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableV
         
         print(passedAlbumName)
         print(imageNamesArray)
-        
 
     
     }
-    
+  
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
+        let cell:PhotoCell = tableView.cellForRow(at: indexPath) as! PhotoCell
+      
+        let save = UITableViewRowAction(style: .normal, title: "Save") { action, index in
+            print("SAVE button tapped")
+            
+            let imageData = UIImagePNGRepresentation((cell.itemImage.image)!)
+            let compressedImg = UIImage(data: imageData!)
+            UIImageWriteToSavedPhotosAlbum(compressedImg!, nil, nil, nil)
+            
+            print("selected image")
+        }
+        save.backgroundColor = .lightGray
+        
+        
+        return [save]
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:PhotoCell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell") as! PhotoCell
+       
         cell.itemImage?.image = images[indexPath.row]
         cell.itemImage?.contentMode = .scaleAspectFit
-        cell.itemImage?.isUserInteractionEnabled = true
-        
-        let longPressRecognizer = UILongPressGestureRecognizer(target:self, action: Selector(("longPressed:")))
-        longPressRecognizer.minimumPressDuration = 0.5
-        
-    cell.itemImage?.addGestureRecognizer((longPressRecognizer))
+        cell.delegate = self
+  
+
         return cell
     }
+    
+  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return images.count
     }
@@ -187,25 +210,61 @@ class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableV
     func updateTableView() {
         imageTableView.reloadData()
     }
-    
-    func longPressed(sender: UILongPressGestureRecognizer) {
-        UIImageWriteToSavedPhotosAlbum(imageNames.image!, self,  "image:didFinishSavingWithError:contextInfo:", nil)
+    func tableCell(didClickedImageOf tableCell: UITableViewCell) {
+        if let rowIndexPath = imageTableView.indexPath(for: tableCell) {
+            print("Row Selected of indexPath: \(rowIndexPath)")
+        }
     }
+
+    //print (currentAlbumName)
+    func saveImageToPhone(recognizer: UITapGestureRecognizer)
+    {
+        if recognizer.state == UIGestureRecognizerState.ended {
+            let tapLocation = recognizer.location(in: self.imageTableView)
+            if let tapIndexPath = self.imageTableView.indexPathForRow(at: tapLocation) {
+                if (self.imageTableView.cellForRow(at: tapIndexPath) as? PhotoCell) != nil {
+                    print("Row Selected")
+                    
+                }
+            }
+        }
+    }
+    
 }
 
 class PhotoCell: UITableViewCell {
-    
+
     @IBOutlet weak var itemImage: UIImageView!
     
     
+    
     var delegate: ReloadTable?
+    var indexPath: IndexPath?
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.delegate = nil
+    }
     
     func reloadItemTable () {
         delegate?.updateTableView()
        
     }
+    
+  
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+       
+    }
+    
+  
 }
+
 
 protocol ReloadTable {
     func updateTableView()
+}
+
+protocol CellImageTapDelegate {
+    func tableCell(didClickedImageOf tableCell: UITableViewCell)
 }
