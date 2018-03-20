@@ -360,6 +360,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ufd-ea-A7U" secondAttribute="trailing" id="Exc-cq-KO2"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ufd-ea-A7U" secondAttribute="bottom" id="FTS-fg-jvx"/>

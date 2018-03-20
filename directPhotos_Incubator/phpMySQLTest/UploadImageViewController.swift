@@ -38,8 +38,14 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func albumRollTapped(_ sender: Any) {
-        let goToAlbumRollVC = self.storyboard?.instantiateViewController(withIdentifier: "albumRollVC") as! AlbumRollViewController
-        self.present(goToAlbumRollVC, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Pro Tip!:" , message: "To save images to your Photo Library, swipe left on any image!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok!", style: .default) { (hand) -> Void in
+            let nextScene = self.storyboard?.instantiateViewController(withIdentifier: "albumRollVC")
+            self.present(nextScene!, animated: true, completion: nil)
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+        
        
         
 

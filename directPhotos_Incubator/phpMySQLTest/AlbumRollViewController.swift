@@ -180,7 +180,7 @@ class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableV
             let compressedImg = UIImage(data: imageData!)
             UIImageWriteToSavedPhotosAlbum(compressedImg!, nil, nil, nil)
             
-            print("selected image")
+            print("savedimage")
         }
         save.backgroundColor = .lightGray
         
