@@ -70,7 +70,7 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
         }// end whole if camera is available
             //if no camera available...go to photo album
         else{
-            imagePickerController.sourceType = .photoLibrary
+           
         }//end else
         
         
@@ -79,6 +79,12 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
         
     }
    
+    @IBAction func photoLibraryTapped(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true, completion:nil)
+    }
     
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [AnyHashable:Any]!)
     {

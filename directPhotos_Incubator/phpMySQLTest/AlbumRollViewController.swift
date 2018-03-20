@@ -179,7 +179,15 @@ class AlbumRollViewController: UIViewController, UITableViewDataSource, UITableV
             let imageData = UIImagePNGRepresentation((cell.itemImage.image)!)
             let compressedImg = UIImage(data: imageData!)
             UIImageWriteToSavedPhotosAlbum(compressedImg!, nil, nil, nil)
+            let alert = UIAlertController(title: "Saved!" , message: "", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
             
+            // change to desired number of seconds (in this case 5 seconds)
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){
+                // your code with delay
+                alert.dismiss(animated: true, completion: nil)
+            }
             print("savedimage")
         }
         save.backgroundColor = .lightGray
